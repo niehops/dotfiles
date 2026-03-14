@@ -24,6 +24,6 @@ tmux
 ```
 
 #### To install Tmux plugins
-(Ctrl + a ) + I (capital)
+(Ctrl + a ) + i (capital)
 
 
