@@ -29,3 +29,6 @@
 # Nushell history
 history.txt
 history.sqlite3
+
+# Nushell path
+path.nu
