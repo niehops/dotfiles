@@ -639,3 +639,23 @@ rm install.sh
 v install.sh
 git add .
 v README.md
+git add .
+git commit -m "Added README and install sh"
+ping google.com
+ping gemini.google.com
+cd
+ls .ssh
+pbcopy .ssh/id_ed255.pub
+pbcopy .ssh/id_ed25519.pub
+cat .ssh/id_ed25519.pub 
+ssh-keygen -t ed25519 -C "niehops@gmail.com"
+pbcopy .ssh/id_ed25519.pub
+cat .ssh/id_ed25519.pub 
+ssh -T git@github.com
+cd dotfiles/
+git remote add origin git@github.com:niehops/dotfiles.git
+git push -u origin main
+git branch -M main
+git push -u origin main
+mkdir .github/workflows
+v .github/workflows/lint.yml
