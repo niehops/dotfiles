@@ -659,3 +659,29 @@ git branch -M main
 git push -u origin main
 mkdir .github/workflows
 v .github/workflows/lint.yml
+git add .
+git commit -m "added github actions"
+git push origin main
+ssh lab
+ping lab
+ssh lab
+ls
+cd 
+ls .config/tmux
+ls .tmux/
+cd dotfiles/
+ls
+cd tmux
+ls
+ls -a
+ls .tmux
+cd 
+ls .zsh
+cat .zsh/zsh-peco-history/
+cat .zsh/zsh-peco-history/zsh-peco-history.zsh 
+cd dotfiles/
+ls
+rm -r tmux/.tmux/
+cd
+mv .tmux dotfiles/tmux/
+cd dotfiles/
