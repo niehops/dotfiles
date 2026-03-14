@@ -25,3 +25,7 @@
 # App specific data/logs
 .local/share/nvim/
 *.log
+
+# Nushell history
+history.txt
+history.sqlite3
