@@ -633,3 +633,9 @@ clear
 v .gitignore
 ssh lab
 git init
+git add .
+git commit -m "Initial commit: Add dotfiles and install script"
+rm install.sh
+v install.sh
+git add .
+v README.md
