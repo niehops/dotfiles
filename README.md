@@ -11,6 +11,19 @@ Personal configuration for macOS terminal environment.
 
 ### Quick Setup:
 ```bash
-git clone <your-repo-url> ~/dotfiles
+git clone https://github.com/niehops/dotfiles
 cd ~/dotfiles
+chmod +x install.sh
 ./install.sh
+```
+
+### Tmux plugin Setup:
+run Tmux
+```bash
+tmux
+```
+
+#### To install Tmux plugins
+(Ctrl + a ) + I (capital)
+
+
