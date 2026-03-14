@@ -1,0 +1,10 @@
+command = /opt/homebrew/bin/nu
+theme = Catppuccin Mocha
+font-family = "JetBrainsMono Nerd Font"
+font-feature = true
+font-size = 19
+mouse-hide-while-typing = true
+window-decoration = true
+macos-option-as-alt = true
+background-opacity = 0.8
+background-blur-radius = 20

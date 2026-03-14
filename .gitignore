@@ -1,0 +1,27 @@
+# OS generated files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Secret files
+*.local
+*.secret
+.env
+.netrc
+
+# SSH and GPG keys
+.ssh/
+.gnupg/
+
+# Shell history
+.zsh_history
+.bash_history
+.node_repl_history
+
+# Cloud Credentials
+.aws/
+.kube/config
+
+# App specific data/logs
+.local/share/nvim/
+*.log

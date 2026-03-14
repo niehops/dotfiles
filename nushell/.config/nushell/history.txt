@@ -1,0 +1,635 @@
+cd .config/nushell/
+ls
+mkdir themes
+ls
+cp ~/Desktop/catppuccin_mocha.nu themes/
+exit
+clear
+cd .config/ghostty/
+ls
+nvim config
+brew install starship
+starship
+cd
+ls .cache
+cd .cache
+open starship/
+cd starship/
+ls
+open init.nu
+cd .config
+cd ../.config
+cd ../../.config/
+ls
+mkdir starship
+cd starship/
+ls
+nvim starship.toml
+cd ../nushell/
+ls
+config nu
+config env
+echo $User
+$env.User
+config env
+config nu
+exit
+config nu
+starship 
+clear
+ls
+starship 
+ls .cache
+cd .cache
+ls
+rm -rf starship
+exit
+ls .cache
+mkdir -p ~/.config/tmux/plugins/catppuccin<\n>
+exit
+clear
+cd
+awscli
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm<\n>
+tmux
+exit
+clear
+cd .config/tmux/
+nvim tmux.conf
+ls
+cd
+cd .config/starship/
+ls
+nvim starship.toml
+exit
+clear
+config env
+rm -rf .cache/starship/
+exit
+clear
+nvim .config/starship/starship.toml
+clear
+cd labs/cloud-lab/
+clear
+cd
+nvim .config/starship/starship.toml
+cd labs/cloud-lab/
+clear
+cd
+ls
+pwd
+ls .aws
+cat .aws/config
+aws configure list
+echo $AWS_PROFILE
+$env.AWS_PROFILE
+exit
+export AWS_PROFILE=cloud-lab
+exit
+aws configure list
+$env.AWS_PROFILE
+exit
+config env
+exit
+clear
+cat .aws/config
+cd
+config env
+config nu
+exit
+clear
+cd
+exit
+nvim .config/starship/starship.toml
+exit
+tmux
+exit
+config nu
+exit
+config env
+exit
+clear
+$env.AWS_PROFILE
+$env.AWS_PROFILE = "cloud-lab"
+$env.AWS_PROFILE
+clear
+aws sts get-caller-identity
+aws sts get-caller-identity --profile cloud-lab
+aws logout
+aws sso logout
+exit
+clear
+exit
+cd .aws
+ls
+cat sso
+cd sso/
+ls
+cd cache/
+ls
+cd ../../
+cat amazonq
+cd amazonq/
+ls
+cd ../
+open config
+open credentials
+cp credentials credentials.bak
+cp config config.bak
+aws configure --profile cloud-lab set aws_access_key_id ""
+aws configure --profile cloud-lab set aws_secret_access_key ""
+aws configure list-profiles
+nvim credentials
+nvim config
+aws configure list-profiles
+exit
+cd .config/starship/
+ls
+nvim starship.toml
+clear
+cd ../
+ls
+cd starship/
+ls
+nvim starship.toml
+exit
+cd .config/starship/
+nvim starship.toml
+clear
+cd
+cd .aws/
+ls
+cp config.bak config
+cp credentials.bak credentials
+aws configure list-profiles
+nvim ~/.config/starship/starship.toml
+$env.AWS_PROFILE = "cloud-lab"
+clear
+$env.AWS_PROFILE = ""
+clear
+config env
+cd ../
+mkdir .config/nushell/scripts
+nvim .config/nushell/scripts/starship.nu
+config env
+config nu
+exit
+nu
+toggle-gcloud
+nvim .config/nushell/scripts/starship.nu
+exit
+toggle-gcloud
+nvim .config/nushell/scripts/starship.nu
+exit
+nu
+toggle-gcloud
+toggle-aws 
+toggle-gcloud
+toggle-aws 
+toggle-gcloud
+exit
+toggle-gcloud
+nvim .config/nushell/scripts/starship.nu
+toggle-gcloud
+exit
+nu
+toggle-gcloud
+toggle-aws
+$env.AWS_PROFILE = "cloud-lab"
+toggle-aws
+ls
+ll
+clear
+toggle-aws
+cd .config/nushell/
+ls
+cp config.nu config.nu.bak
+config nu
+toggle-aws
+exit
+clear
+lt
+ff
+brew install aerospace
+aerospace
+ff
+fzf
+brew install carapace
+config env
+config nu
+exit
+aws configure list-profiles 
+cd .cache
+ls
+rm -rf carapace/
+exit
+ls .cache
+config env
+v .config/tmux/tmux.conf 
+exit
+tmux
+v .config/tmux/tmux.conf 
+exit
+v .config/tmux/tmux.conf 
+exit
+tmux
+ls .config/tmux/plugins/tmux-resurrect/
+v .config/tmux/tmux.conf 
+exit
+v .config/tmux/tmux.conf 
+exit
+tmux
+v .config/tmux/tmux.conf 
+exit
+v .config/tmux/tmux.conf 
+v .config/tmux/tmux.reset.conf
+v .config/tmux/tmux.conf 
+exit
+tmux
+v .config/tmux/tmux.conf 
+exit
+v .config/tmux/tmux.conf 
+exit
+tmux
+v .config/tmux/tmux.conf 
+exit
+v .config/tmux/tmux.conf 
+exit
+tmux
+v .config/tmux/tmux.conf 
+tmux
+v .config/tmux/tmux.conf 
+tmux
+v .config/tmux/tmux.conf 
+tmux
+v .config/tmux/tmux.conf 
+tmux
+v .config/tmux/tmux.conf 
+tmux
+v .config/tmux/tmux.conf 
+tmux
+v .config/tmux/tmux.conf 
+tmux
+v .config/tmux/tmux.conf 
+tmux
+v .config/tmux/tmux.conf 
+tmux
+cd .config/tmux/
+ls
+ls plugins/
+cd plugins/catppuccin-tmux/
+ls
+v .config/tmux/tmux.conf 
+v ~/.config/tmux/tmux.conf
+exit
+nu
+tmux
+v ~/.config/tmux/tmux.conf
+tmux
+v ~/.config/tmux/tmux.conf
+tmux
+v ~/.config/tmux/tmux.conf
+tmux
+v ~/.config/tmux/tmux.conf
+tmux
+v ~/.config/tmux/tmux.conf
+tmux
+v ~/.config/tmux/tmux.conf
+tmux
+v ~/.config/tmux/tmux.conf
+tmux
+v ~/.config/tmux/tmux.conf
+tmux
+v ~/.config/tmux/tmux.conf
+ls .tmux/plugins/
+v ~/.config/tmux/tmux.conf
+ls .tmux/plugins/
+tmux kill-server
+tmux
+v ~/.config/tmux/tmux.conf
+exit
+tmux
+v ~/.config/tmux/tmux.conf
+tmux
+v ~/.config/tmux/tmux.conf
+tmux
+exit
+v .config/ghostty/config 
+exit
+starship 
+which starship
+fish
+$env.PATH
+config nu
+nvim 
+exit
+config nu
+config env
+$env.HOME
+$env.PATH
+cd
+exit
+config env
+which su
+which nu
+$env.PATH
+$env.HOME
+which nu
+config env
+exit
+exit
+$env.HOME
+$env.PATH
+config nu
+nvim
+exit
+tmux
+exit
+exit
+$env.PATH = ($env.PATH | append "/opt/homebrew/bin")
+$env.PATH
+config nu
+nvim
+$env.config.buffer_editor = "nvim"
+config nu
+config env
+exit
+$env.PATH
+ls
+ls | where modified < 2y
+ls | where modified < 2Y
+ls | where modified < "2 years"
+ls | where size < 1kb
+ls | where modified < 2h
+v .config/tmux/tmux.conf 
+exit
+tmux
+toggle-aws
+$env.AWS_PROFILE = "cloud-lab"
+ls
+ls | where modified < 2monthago
+ls | where modified < 2mo ago
+ls | where modified < 2m
+ls | where modified < 2mo
+ls | where modified < ((date now) - 2mo)
+ls | where modified > ((date now) - 2mo)
+ls | where modified > ((date now) - 60day)
+ls | where modified < 60day
+ls | where modified > ((date now) - 5hr)
+ls | where modified < ((date now) - 5hr)
+toggle-aws
+ls -a
+cd .opencode
+ls
+cd ../
+opencode
+pwd
+opencode
+cd .opencode
+ls
+exit
+clear
+opencode
+code .
+antigravity
+config nu
+exit
+code 
+clear
+tmux list-session
+exit
+tmux
+tmux kill-server
+tmux list-sessions 
+tmux list-session
+tmux kill-session -a
+exit
+tmux new -s hei-lab
+tmux list-session
+tmux
+tmux new-window -n my-lab
+cd .config/tmux/
+ls
+v tmux.reset.conf 
+cp tmux.reset.conf ~/Desktop/
+v tmux.reset.conf 
+exit
+ls 
+clear
+ls
+exit
+tmux list-sessions 
+exit
+tmux
+exit
+tmux 
+exit
+ls
+rm a
+cd alias
+ls
+open docker
+cat sql
+cd 
+ls
+rm NewUser*
+ls
+open tmux.conf
+rm tmux.conf
+ls
+ls workspace/
+rm -rf dotfiles
+ls Sites/
+ls PycharmProjects/
+ls
+du -sh VirtualBoxVMs/
+du -h VirtualBoxVMs/
+du VirtualBoxVMs/
+du Downloads/
+du Movies/
+du Pictures/
+cd Pictures/
+ls
+rm -rf $RECYCLE.BIN
+rm -r $RECYCLE>BIN
+rm -r $RECYCLE.BIN
+fish
+clear
+ls
+rm BIN
+ls
+rm desktop.ini
+ls
+du cos
+cd cos
+ls
+du D
+du Ely
+du ne
+du seo
+du yw
+cd 
+ls
+ls -a
+mkdir .myworks
+cd .myworks/
+ls
+mkdir websites
+cd websites/
+ls
+mkdir lilypanneain
+cd lilypanneain
+ls
+pwd
+ls
+cd /Users/nieh/.myworks/websites/lilypanneain
+ls
+mkdir images
+cp ~/Desktop/spa/viber_image_2026-03-11_15-5* images/
+ls
+ls images/
+mkdir colorschemes
+v colorschemes/color
+ls
+cd images/
+ls
+mv viber_image_2026-03-11_15-58-54-167.jpg back.jpg
+mv viber_image_2026-03-11_15-59-22-466.jpg front.jpg
+cd ../
+ls
+source venv/bin/activate
+overlay use venv/bin/activate.nu
+source venv/bin/activate.nu
+python -m venv venv
+python3 --version
+python3 -m venv venv
+source venv/bin/activate.nu
+python3 -v
+python3 --version
+source venv/bin/activate.nu
+python3 -m venv venv
+source venv/bin/activate.nu
+ls
+rm -rf venv
+python3 -m venv venv
+source venv/bin/activate.nu
+overlay use venv/bin/activate.nu
+pip install virtualenv 
+virtualenv venv
+ls venv/bin/
+overlay use venv/bin/activate.nu 
+python --version
+python app.py
+python install Flask
+pip install Flask
+ping localhost
+python app.py
+cd .myworks/websites/lilypanneain/
+ls
+ls static/
+opencode .
+ssh -R 80:127.0.0.1:5000
+ssh -R 80:127.0.0.1:5000 vibetunnel.sh
+brew install --cask vibetunnel
+vibetunnel
+brew install --cask vibetunnel
+cd
+mv .myworks myworks
+mv myworks .myworks
+ssh -R 80:127.0.0.1:5000 vibetunnel.sh
+ssh -R 80:127.0.0.1:5000 nokey@localhost.run
+clear
+exit
+cd
+exit
+tmux
+exit
+tmux a hei-lab
+tmux a -n hei-lab
+tmux attach hei-lab
+tmux a
+exit
+tmux a
+tmux ls
+ls
+ls .config/tmux/
+tree 
+tree -l 2
+tree -h
+tree --help
+tree -a -L 3
+tree -a -L 2
+tree -a .config
+tree -a .config -L 2
+clear
+tree .local/share/ -L 2
+tree -a .config -L 2
+tree -a -L 2 .caches
+tree -a -L 2 .cache
+ls -a
+cat .tmux
+ls .tmux/
+ls .tmux/plugins/
+cd .config
+ls
+rm -r nvim.bak
+cp -r fish fish.bak
+cp nushell nushell.bak
+cp -r nushell nushell.bak
+cp -r starship starship.bak
+cp -r tmux tmux.bak
+ls themes
+rm -rf themes
+ls ghostty/
+cp -r ghostty ghostty.bak
+ls nushell/
+ls
+cd 
+cp -r .zsh .zsh.bak
+cp -r .zinit .zinit.bak
+du .zinit
+du .zsh
+cd .local/share/
+ls
+du nvim
+du tmux
+ls tmux
+cd 
+mkdir dotfiles
+cd dotfiles/
+mkdir nvim/.config
+mkdir nushell/.config
+mkdir {ghostty,fish}/.config
+mkdir ghostty/.config
+mkdir fish/.config
+mkdir tmux/.config
+mkdir starship/.config
+mkdir zsh/
+tree .
+tree . -a
+cd
+du .tmux
+cp .tmux .tmux.bak
+cp -r .tmux .tmux.bak
+cd dotfiles/
+ls
+mkdir tmux/.tmux/
+cd
+mv .config/nvim/ dotfiles/nvim/.config -r
+mv .config/nvim/ dotfiles/nvim/.config
+ls dotfiles/nvim/.config/
+mv .config/nushell dotfiles/nushell/.config
+mv .config/ghostty dotfiles/ghostty/.config
+mv .config/fish dotfiles/fish/.config
+ls -a .config
+mv .config/starship dotfiles/starship/.config
+mv .config/tmux dotfiles/tmux/.config/
+mv .zsh dotfiles/zsh/
+cd dotfiles/
+for app in nvim nushell ghostty fish tmux starship zsh; do
+fish
+v
+clear
+v .gitignore
+ssh lab
+git init
