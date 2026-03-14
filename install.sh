@@ -13,7 +13,7 @@ fi
 
 echo "🔍 Detected System: $DISTRO"
 
-# Package Manager အလိုက် Install လုပ်မည့် Function
+# Package Manager Install Function
 install_stow() {
     case $DISTRO in
         macos)
@@ -34,13 +34,24 @@ install_stow() {
     esac
 }
 
-# Stow မရှိလျှင် Install လုပ်ပါ
+# Stow Install
 if ! command -v stow &> /dev/null; then
     echo "📦 Installing GNU Stow..."
     install_stow
 fi
 
-# Dotfiles များကို Symlink ချိတ်ခြင်း
+# TPM Install
+
+echo "🔌 Setting up Tmux Plugin Manager..."
+TPM_PATH="$HOME/.tmux/plugins/tpm"
+if [ ! -d "$TPM_PATH" ]; then
+    echo "Cloning TPM..."
+    git clone https://github.com/tmux-plugins/tpm "$TPM_PATH"
+else
+    echo "TPM already installed, skipping clone."
+fi
+
+# Dotfiles Symlin
 apps=("nvim" "nushell" "ghostty" "fish" "tmux" "starship" "zsh")
 cd "$(dirname "$0")"
 
