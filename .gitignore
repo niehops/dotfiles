@@ -30,3 +30,5 @@
 history.txt
 history.sqlite3
 
+# Tmux plugins
+tmux/.config/tmux/plugins/
