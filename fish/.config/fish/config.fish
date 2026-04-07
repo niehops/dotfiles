@@ -1,5 +1,8 @@
 set fish_greeting ""
 
+set -gx CLOUDSDK_CONFIG /tmp/empty-gcloud-config
+set -gx GCP_SYMBOL ""
+
 set -gx TERM xterm-256color
 
 # theme
@@ -16,12 +19,13 @@ alias ll "ls -l"
 alias lla "ll -A"
 alias g git
 alias v nvim
-alias py python3
-#alias myip "dig +short myip.opendns.com @resolver1.opendns.com"
+
+#
 alias myip6 "curl -6 ip.sb"
 alias myip "curl -4 ip.sb"
 alias colimavz "colima start -t vz -m 4"
 alias k kubectl
+alias python python3
 
 set -gx EDITOR nvim
 
@@ -77,13 +81,18 @@ fish_add_path /Users/nieh/.antigravity/antigravity/bin
 # opencode
 fish_add_path /Users/nieh/.opencode/bin
 
-# Starship ကို စတင်ခြင်း
+# Starship
 if command -v starship >/dev/null
     starship init fish | source
 end
 
-# Starship config path ကို သတ်မှတ်ခြင်း (Cross-platform အတွက်)
+# Starship config path 
 set -gx STARSHIP_CONFIG ~/.config/starship/starship.toml
+
+# carapace completion
+
+set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense' # optional
+carapace _carapace | source
 
 # aws toggle
 
@@ -104,14 +113,26 @@ end
 # gcloud toggle
 #
 function toggle-gcloud
-    if not set -q CLOUDSDK_CONFIG
-        set -gx CLOUDSDK_CONFIG /tmp/empty-gcloud-config
-        echo "GCloud Module: [HIDDEN]"
-    else
+    if test "$GCP_SYMBOL" = ""
         set -e CLOUDSDK_CONFIG
+        set -gx GCP_SYMBOL " "
         echo "GCloud Module: [SHOWN]"
+    else
+        set -gx CLOUDSDK_CONFIG /tmp/empty-gcloud-config
+        set -gx GCP_SYMBOL ""
+        echo "GCloud Module: [HIDDEN]"
     end
 end
+
+# function toggle-gcloud
+#     if not set -q CLOUDSDK_CONFIG
+#         set -gx CLOUDSDK_CONFIG /tmp/empty-gcloud-config
+#         echo "GCloud Module: [HIDDEN]"
+#     else
+#         set -e CLOUDSDK_CONFIG
+#         echo "GCloud Module: [SHOWN]"
+#     end
+# end
 
 # AWS profile set
 function asp
@@ -123,3 +144,16 @@ function asp
         echo "AWS Profile set to: $AWS_PROFILE"
     end
 end
+
+# set -gx GCP_VISIBLE false
+
+# function toggle-gcp
+#     if test "$GCP_VISIBLE" = false
+#         set -gx GCP_VISIBLE true
+#         echo "GCP Project: [SHOWN]"
+#     else
+#         set -gx GCP_VISIBLE false
+#         set -e CLOUDSDK_CONFIG
+#         echo "GCP Project: [HIDDEN]"
+#     end
+# end

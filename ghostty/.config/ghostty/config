@@ -1,4 +1,4 @@
-command = /opt/homebrew/bin/nu
+command = /opt/homebrew/bin/fish
 theme = Catppuccin Mocha
 font-family = "JetBrainsMono Nerd Font"
 font-feature = true
