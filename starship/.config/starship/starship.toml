@@ -1,6 +1,5 @@
 add_newline = true
 palette = "catppuccin_mocha"
-command_timeout = 1000
 
 format = """
 $directory$fill$git_branch$git_status$rust$python$golang$aws$gcloud$cmd_duration
@@ -10,18 +9,15 @@ $character"""
 symbol = " "
 
 [directory]
-style = "bold cyan"
+style = "bold blue"
 format = "[$path]($style) "
-truncation_length = 10
+truncation_length = 1
 truncate_to_repo = false
-truncation_symbol = ".../"
-
-[git_commit]
-tag_symbol = "  "
+truncation_symbol = "~/"
 
 [git_branch]
 symbol = " "
-style = "bold magenta"
+style = "bold mauve"
 format = "on [$symbol$branch]($style) "
 
 [rust]
@@ -30,57 +26,29 @@ style = "bold red"
 format = "is [$symbol($version)]($style) "
 
 [python]
-symbol = "🐍 "
-style = "bold yellow"
+symbol = "  "
+style = "bold green"
 format = "via [$symbol($version)]($style) "
 
 [cmd_duration]
 min_time = 500
 style = "bold yellow"
-format = "took [$duration]($style) "
+format = "󱎫 [$duration]($style) "
 
 [character]
 success_symbol = "[❯](bold green)"
 error_symbol = "[❯](bold red)"
 
-#[os]
-#disabled = false
-#style = "bold white"
-
-#[os.symbols]
-#Macos = "󰀵 "
-#Ubuntu = "󰕈 "
-#Arch = "󰣇 "
-
-#[character]
-#success_symbol = "[󱞩](bold #a6e3a1)"
-#error_symbol = "[󱞩](bold #f38ba8)"
-
-#[character]
-#success_symbol = "[󰊠 ](bold green)"
-#error_symbol = "[󰊠 ](bold red)"
-
-#[directory]
-#style = "bold #89b4fa"
-#format = "[$path]($style)[$read_only]($read_only_style) "
-#truncation_length = 3
-#truncate_to_repo = true
-
-#[character]
-#vicmd_symbol = "[N] >>>"
-#success_symbol = "[➜](bold green)"
-
-#[directory.substitutions]
-#"~/tests/starship-custom" = "work-project"
-
 [gcloud]
-format = '[$symbol$account]($style) '
+format = "[$symbol$project]($style) "
 symbol = " "
-disabled = false
+disabled = true
+style = "bold sky"
 
 [aws]
-format = "on [$symbol$profile](bold #ff9900) [($region)](italic #ff9900) "
+format = "on [$symbol$profile](bold $style) [($region)](italic $style) "
 symbol = "󰸏 "
+style = "peach"
 disabled = false
 
 [aws.region_aliases]
@@ -97,21 +65,6 @@ eu-west-1 = "󰇧 IRE"
 
 [golang]
 format = "[ ](bold cyan)"
-
-[kubernetes]
-symbol = "☸ "
-disabled = false
-detect_files = ["Dockerfile"]
-format = '[$symbol$context( \($namespace\))]($style) '
-
-[[kubernetes.contexts]]
-context_pattern = "arn:aws:eks:us-west-2:577926974532:cluster/zd-pvc-omer"
-style = "green"
-context_alias = "omerxx"
-symbol = " "
-
-[docker_context]
-disabled = true
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
