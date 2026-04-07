@@ -63,7 +63,6 @@ end
 # dotFiles config 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
-
 # PHP PATH
 
 set PHP_VERSION (ls /Applications/MAMP/bin/php/ | sort -n | tail -1)
@@ -77,3 +76,50 @@ fish_add_path /Users/nieh/.antigravity/antigravity/bin
 
 # opencode
 fish_add_path /Users/nieh/.opencode/bin
+
+# Starship ကို စတင်ခြင်း
+if command -v starship >/dev/null
+    starship init fish | source
+end
+
+# Starship config path ကို သတ်မှတ်ခြင်း (Cross-platform အတွက်)
+set -gx STARSHIP_CONFIG ~/.config/starship/starship.toml
+
+# aws toggle
+
+function toggle-aws
+    if set -q AWS_PROFILE
+        set -gx _OLD_AWS_PROFILE $AWS_PROFILE
+        set -e AWS_PROFILE
+        echo "AWS Module: [HIDDEN]"
+    else if set -q _OLD_AWS_PROFILE
+        set -gx AWS_PROFILE $_OLD_AWS_PROFILE
+        set -e _OLD_AWS_PROFILE
+        echo "AWS Module: [SHOWN]"
+    else
+        echo "No active AWS profile to toggle."
+    end
+end
+
+# gcloud toggle
+#
+function toggle-gcloud
+    if not set -q CLOUDSDK_CONFIG
+        set -gx CLOUDSDK_CONFIG /tmp/empty-gcloud-config
+        echo "GCloud Module: [HIDDEN]"
+    else
+        set -e CLOUDSDK_CONFIG
+        echo "GCloud Module: [SHOWN]"
+    end
+end
+
+# AWS profile set
+function asp
+    if test (count $argv) -eq 0
+        set -e AWS_PROFILE
+        echo "AWS Profile cleared."
+    else
+        set -gx AWS_PROFILE $argv[1]
+        echo "AWS Profile set to: $AWS_PROFILE"
+    end
+end

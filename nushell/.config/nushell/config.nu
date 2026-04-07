@@ -917,10 +917,11 @@ def --env cx [arg] {
 alias l = ls --all
 alias c = clear
 alias ll = ls -l
-alias lt = eza --tree --level=2 --long --icons --git
+alias ltt = eza --tree --level=2 --long --icons --git
 alias v = nvim
 alias as = aerospace
 alias asr = atuin scripts run
+alias python = python3
 
 def ff [] {
     aerospace list-windows --all | fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
@@ -960,8 +961,20 @@ alias ke = kubectl exec -it
 # CODE
 alias code = antigravity
 
+# OTHERS
+alias azip = ^zip
+alias adate = ^date
+alias myip6 = curl -6 ip.sb
+alias myip = curl -4 ip.sb
+
 # source
 #source ~/.config/nushell/themes/catppuccin_mocha.nu
 use ~/.cache/starship/init.nu
 use starship.nu *
 source ~/.cache/carapace/init.nu
+
+# pyenv
+$env.PYENV_ROOT = "~/.pyenv" | path expand
+if (( $"($env.PYENV_ROOT)/bin" | path type ) == "dir") {
+  $env.PATH = $env.PATH | prepend $"($env.PYENV_ROOT)/bin" }
+$env.PATH = $env.PATH | prepend $"(pyenv root)/shims"

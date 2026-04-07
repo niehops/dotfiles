@@ -27,6 +27,9 @@ path add "node_modules/.bin"
 path add "/opt/homebrew/bin"
 path add "/opt/pmk/env/global/bin"
 path add "/usr/local/bin"
+path add "/Applications/MAMP/bin/php/php8.4.1/bin/"
+path add "/Users/nieh/.espressif/esp-idf-v5.5.2/"
+path add "/Users/nieh/.espressif/esp-idf-v5.5.2/tools/"
 
 # starship config
 mkdir ~/.cache/starship

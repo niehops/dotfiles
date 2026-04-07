@@ -1,34 +1,106 @@
-add_newline = false
-format = "$directory$character"
+add_newline = true
 palette = "catppuccin_mocha"
-right_format = "$all"
 command_timeout = 1000
 
-[character]
-vicmd_symbol = "[N] >>>"
-success_symbol = "[➜](bold green)"
+format = """
+$directory$fill$git_branch$git_status$rust$python$golang$aws$gcloud$cmd_duration
+$character"""
 
-[directory.substitutions]
-"~/tests/starship-custom" = "work-project"
+[fill]
+symbol = " "
+
+[directory]
+style = "bold cyan"
+format = "[$path]($style) "
+truncation_length = 10
+truncate_to_repo = false
+truncation_symbol = ".../"
+
+[git_commit]
+tag_symbol = "  "
 
 [git_branch]
-format = "[$symbol$branch(:$remote_branch)]($style)"
+symbol = " "
+style = "bold magenta"
+format = "on [$symbol$branch]($style) "
+
+[rust]
+symbol = "🦀 "
+style = "bold red"
+format = "is [$symbol($version)]($style) "
+
+[python]
+symbol = "🐍 "
+style = "bold yellow"
+format = "via [$symbol($version)]($style) "
+
+[cmd_duration]
+min_time = 500
+style = "bold yellow"
+format = "took [$duration]($style) "
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+#[os]
+#disabled = false
+#style = "bold white"
+
+#[os.symbols]
+#Macos = "󰀵 "
+#Ubuntu = "󰕈 "
+#Arch = "󰣇 "
+
+#[character]
+#success_symbol = "[󱞩](bold #a6e3a1)"
+#error_symbol = "[󱞩](bold #f38ba8)"
+
+#[character]
+#success_symbol = "[󰊠 ](bold green)"
+#error_symbol = "[󰊠 ](bold red)"
+
+#[directory]
+#style = "bold #89b4fa"
+#format = "[$path]($style)[$read_only]($read_only_style) "
+#truncation_length = 3
+#truncate_to_repo = true
+
+#[character]
+#vicmd_symbol = "[N] >>>"
+#success_symbol = "[➜](bold green)"
+
+#[directory.substitutions]
+#"~/tests/starship-custom" = "work-project"
 
 [gcloud]
-disabled = true
+format = '[$symbol$account]($style) '
+symbol = " "
+disabled = false
 
 [aws]
-format = '[$symbol(profile: "$profile" )(\(region: $region\) )]($style)'
-disabled = true
-style = "bold blue"
-symbol = " "
+format = "on [$symbol$profile](bold #ff9900) [($region)](italic #ff9900) "
+symbol = "󰸏 "
+disabled = false
+
+[aws.region_aliases]
+ap-southeast-1 = "󰇧 SG"
+ap-southeast-2 = "󰇧 AU"
+ap-northeast-1 = "󰇧 TYO"
+ap-northeast-2 = "󰇧 SEL"
+us-east-1 = "󰇧 VA"
+us-east-2 = "󰇧 OH"
+us-west-1 = "󰇧 CA"
+us-west-2 = "󰇧 OR"
+eu-central-1 = "󰇧 FRA"
+eu-west-1 = "󰇧 IRE"
 
 [golang]
 format = "[ ](bold cyan)"
 
 [kubernetes]
 symbol = "☸ "
-disabled = true
+disabled = false
 detect_files = ["Dockerfile"]
 format = '[$symbol$context( \($namespace\))]($style) '
 
