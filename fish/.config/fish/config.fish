@@ -17,8 +17,13 @@ alias ls "ls -p -G"
 alias la "ls -A"
 alias ll "ls -l"
 alias lla "ll -A"
-alias g git
 alias v nvim
+
+# git 
+alias g git
+alias gph "git push"
+alias gpl "git pull"
+alias gct "git commit"
 
 #
 alias myip6 "curl -6 ip.sb"
