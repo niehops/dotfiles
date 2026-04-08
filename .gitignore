@@ -36,3 +36,6 @@ tmux/.tmux/plugins/tpm
 
 # nushell
 nushell/*
+
+# zsh
+zsh/*
