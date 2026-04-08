@@ -33,3 +33,6 @@ history.sqlite3
 # Tmux plugins
 tmux/.config/tmux/plugins/
 tmux/.tmux/plugins/tpm
+
+# nushell
+nushell/*

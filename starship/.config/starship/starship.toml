@@ -42,7 +42,7 @@ success_symbol = "[❯](bold green)"
 error_symbol = "[❯](bold red)"
 
 [gcloud]
-symbol = "${GCP_SYMBOL}"
+symbol = "${GCP_SYMBOL-}"
 format = "[$symbol$account]($style) "
 disabled = false
 style = "bold sky"
