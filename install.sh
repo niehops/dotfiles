@@ -88,7 +88,7 @@ echo "    Dotfiles Setup (Git + Stow)         "
 echo "========================================"
 
 # Replace USERNAME with your actual GitHub username or the full repo URL
-DOTFILES_REPO="https://github.com/niehops/dotfiles.git" 
+DOTFILES_REPO="https://github.com/USERNAME/dotfiles.git" 
 DOTFILES_DIR="$HOME/.dotfiles"
 
 if [ ! -d "$DOTFILES_DIR" ]; then
@@ -109,11 +109,23 @@ if [ -d "$DOTFILES_DIR" ]; then
         # Removing the trailing slash
         app_name="${app%/}" 
         echo "Stowing $app_name..."
-        stow "$app_name" -t "$HOME"
+        stow -R "$app_name" -t "$HOME"
     done
     
     cd - > /dev/null
-    echo "[STOW] Dotfiles setup complete!"
+
+    echo ""
+    echo "🔌 Setting up Tmux Plugin Manager..."
+    TPM_PATH="$HOME/.tmux/plugins/tpm"
+    if [ ! -d "$TPM_PATH" ]; then
+        echo "Cloning TPM..."
+        git clone https://github.com/tmux-plugins/tpm "$TPM_PATH"
+    else
+        echo "TPM already installed, skipping clone."
+    fi
+
+    echo ""
+    echo "[STOW] Dotfiles setup complete! All processes finished."
 else
     echo "[ERROR] Dotfiles directory not found. Skipping stow."
 fi
