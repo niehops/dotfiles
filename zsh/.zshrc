@@ -32,6 +32,24 @@ zinit snippet OMZP::sudo
 zinit snippet OMZP::aws
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
+zinit snippet OMZP::terraform
+zinit snippet OMZP::starship
+zinit snippet OMZP::systemd
+zinit snippet OMZP::ssh
+zinit snippet OMZP::rsync
+zinit snippet OMZP::python
+zinit snippet OMZP::npm
+zinit snippet OMZP::postgres
+zinit snippet OMZP::minikube
+zinit snippet OMZP::microk8s
+zinit snippet OMZP::golang
+zinit snippet OMZP::gcloud
+zinit snippet OMZP::fzf
+zinit snippet OMZP::docker
+zinit snippet OMZP::brew
+zinit snippet OMZP::azure
+zinit snippet OMZP::ansible
+#zinit snippet OMZP::
 zinit snippet OMZP::command-not-found
 
 
@@ -71,7 +89,7 @@ setopt hist_find_no_dups
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+#zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
@@ -84,3 +102,17 @@ alias v=nvim
 if [[ -f ~/.config/zsh/toggles.zsh ]]; then
     source ~/.config/zsh/toggles.zsh
 fi
+
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)' --height 90%"
+
+export FZF_ALT_C_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'tree -C {} | head -200' --height 90%"
+
+export FZF_CTRL_R_OPTS="
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard' --height 90%"
