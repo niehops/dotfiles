@@ -132,6 +132,8 @@ setup_dotfiles() {
         git clone "$DOTFILES_REPO" "$DOTFILES_DIR"
     else
         info "Dotfiles repository already exists. Pulling latest changes..."
+        # Run stash first to prevent pull errors over locally modified files
+        git -C "$DOTFILES_DIR" stash push -m "Auto stash before install pull" || true
         git -C "$DOTFILES_DIR" pull
     fi
 
