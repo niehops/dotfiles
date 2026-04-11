@@ -88,7 +88,7 @@ echo "    Dotfiles Setup (Git + Stow)         "
 echo "========================================"
 
 # Replace USERNAME with your actual GitHub username or the full repo URL
-DOTFILES_REPO="https://github.com/github.com/niehops/dotfiles.git" 
+DOTFILES_REPO="https://github.com/niehops/dotfiles.git" 
 DOTFILES_DIR="$HOME/.dotfiles"
 
 if [ ! -d "$DOTFILES_DIR" ]; then
