@@ -1,9 +1,15 @@
-# Hei's Dotfiles 🚀
+# Dotfiles 🚀
 
-Personal configuration for macOS terminal environment.
+Personal configuration for macOS/Linux terminal environment.
+
+### Supported OS:
+- macOS
+- Ubuntu/Debian/Pop
+- Fedora
+- Arch/Manjaro
 
 ### Tools included:
-- **Shells:** Fish, Nushell, Zsh
+- **Shells:** Zsh
 - **Editor:** Neovim
 - **Terminal:** Ghostty
 - **Multiplexer:** Tmux
@@ -11,10 +17,9 @@ Personal configuration for macOS terminal environment.
 
 ### Quick Setup:
 ```bash
-git clone https://github.com/niehops/dotfiles
-cd ~/dotfiles
-chmod +x install.sh
-./install.sh
+curl -fsSL https://raw.githubusercontent.com/niehops/dotfiles/main/install.sh | bash
+
+zsh
 ```
 
 ### Tmux plugin Setup:
