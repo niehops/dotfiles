@@ -16,7 +16,7 @@ install_homebrew() {
 }
 
 # List of packages to install
-PACKAGES=(neovim zsh starship fzf tmux stow git)
+PACKAGES=(neovim zsh starship fzf tmux stow git zoxide)
 
 # Detect OS
 OS="$(uname -s)"
