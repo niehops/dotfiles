@@ -2,7 +2,7 @@ add_newline = true
 palette = "catppuccin_mocha"
 
 format = """
-$directory$fill$git_branch$git_status$rust$python$golang$aws$gcloud$cmd_duration
+$directory$fill$git_branch$git_status$rust$python$golang$aws$gcloud$hostname$cmd_duration
 $character"""
 
 
@@ -70,12 +70,13 @@ us-west-2 = "󰇧 OR"
 eu-central-1 = "󰇧 FRA"
 eu-west-1 = "󰇧 IRE"
 
-
 [hostname]
-ssh_only = true
-format = '[$ssh_symbol](bold blue) on [$hostname](bold red) '
-trim_at = '.companyname.com'
-disabled = false
+ssh_only = false
+format = "at [$hostname]($style) "
+style = "bold pink" # Catppuccin pink color
+[hostname.aliases]
+"loghorizon" = "󰋜 home"
+"loghorizon.local" = "home"
 
 [golang]
 format = "[ ](bold cyan)"
