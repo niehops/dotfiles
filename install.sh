@@ -5,6 +5,17 @@ command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
+# Function to check if a package is already installed
+is_installed() {
+    local pkg="$1"
+    local cmd="$pkg"
+    # Overrides for commands that don't match package names
+    if [ "$pkg" = "neovim" ]; then
+        cmd="nvim"
+    fi
+    command_exists "$cmd"
+}
+
 # Function to install Homebrew on macOS
 install_homebrew() {
     if ! command_exists brew; then
@@ -41,7 +52,7 @@ case "${OS}" in
             fi
             
             for pkg in "${PACKAGES[@]}"; do
-                if command_exists "$pkg"; then
+                if is_installed "$pkg"; then
                     echo "[OK] $pkg is already installed."
                 else
                     echo "[INSTALLING] $pkg..."
@@ -72,7 +83,7 @@ case "${OS}" in
         install_homebrew
         
         for pkg in "${PACKAGES[@]}"; do
-            if command_exists "$pkg"; then
+            if is_installed "$pkg"; then
                 echo "[OK] $pkg is already installed."
             else
                 echo "[INSTALLING] $pkg..."
