@@ -31,4 +31,5 @@ tmux
 #### To install Tmux plugins
 (Ctrl + a ) + i (capital)
 
-
+### Nvim and starship configs are from 
+https://github.com/omerxx/dotfiles
