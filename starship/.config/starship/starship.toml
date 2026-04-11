@@ -70,6 +70,13 @@ us-west-2 = "󰇧 OR"
 eu-central-1 = "󰇧 FRA"
 eu-west-1 = "󰇧 IRE"
 
+
+[hostname]
+ssh_only = true
+format = '[$ssh_symbol](bold blue) on [$hostname](bold red) '
+trim_at = '.companyname.com'
+disabled = false
+
 [golang]
 format = "[ ](bold cyan)"
 
