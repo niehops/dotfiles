@@ -78,3 +78,9 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 # Alias
 alias ls='ls --color'
 alias v=nvim
+
+
+# zsh configs
+if [[ -f ~/.config/zsh/toggles.zsh ]]; then
+    source ~/.config/zsh/toggles.zsh
+fi
