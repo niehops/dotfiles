@@ -39,3 +39,5 @@ nushell/*
 
 # fish
 fish/*
+
+nvim-pack-lock.json
