@@ -1,17 +1,10 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-#fi
-
 # Set the directory for zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/shar}/zinit/zinit.git"
 
 # Download zinit if not exist
 if [ ! -d "$ZINIT_HOME" ]; then
-  mkdir -p "$(dirname $ZINIT_HOME)"
-  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+	mkdir -p "$(dirname $ZINIT_HOME)"
+	git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
 # Source/Load zinit
@@ -52,23 +45,16 @@ zinit snippet OMZP::systemd
 zinit snippet OMZP::terraform
 #zinit snippet OMZP::
 
-
 # Load zsh-completions
 autoload -U compinit && compinit
 zinit cdreplay -q
 
-# eval configurations
-eval "$(fzf --zsh)"
+# source/eval configurations
+source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
 
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
-
-# Source
-#source <(fzf --zsh)
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # keybindings
 bindkey -v
@@ -94,13 +80,26 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 # Alias
-alias ls='ls --color'
+alias ls='eza --icons=always'
+alias lt='eza --icons=always -T -L 1'
+alias la='eza --icons=always -a'
+alias ll='eza --icons=always -l'
+alias lla='eza --icons=always -l -a'
 alias v=nvim
+alias k=kubectl
+alias python=python3
+alias myip6='curl -6 ip.sb'
+alias myip='curl -4 ip.sb'
 
+# git
+alias g=git
+alias gph='git push'
+alias gpl='git pull'
+alias gct='git commit'
 
 # zsh configs
 if [[ -f ~/.config/zsh/toggles.zsh ]]; then
-    source ~/.config/zsh/toggles.zsh
+	source ~/.config/zsh/toggles.zsh
 fi
 
 export FZF_CTRL_T_OPTS="
