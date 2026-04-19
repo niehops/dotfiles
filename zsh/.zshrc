@@ -82,6 +82,7 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 # Alias
 alias ls='eza --icons=always'
 alias lt='eza --icons=always -T -L 1'
+alias lta='eza --icons=always -aT -L 1'
 alias la='eza --icons=always -a'
 alias ll='eza --icons=always -l'
 alias lla='eza --icons=always -l -a'
