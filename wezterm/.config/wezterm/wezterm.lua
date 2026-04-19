@@ -34,7 +34,7 @@ end
 local is_dark = get_appearance():find("Dark")
 
 if is_dark then
-  config.window_background_opacity = 0.1
+  config.window_background_opacity = 0.5
   config.macos_window_background_blur = 40
 else
   config.window_background_opacity = 0.6

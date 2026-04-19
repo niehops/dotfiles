@@ -31,7 +31,6 @@ symbol = "  "
 style = "bold green"
 format = "via [$symbol($version)]($style) "
 
-
 [cmd_duration]
 min_time = 500
 style = "bold yellow"
@@ -49,7 +48,6 @@ style = "bold sky"
 
 #[gcloud.project_aliases]
 # project-id = alias
-
 
 
 [aws]
@@ -71,7 +69,7 @@ eu-central-1 = "󰇧 FRA"
 eu-west-1 = "󰇧 IRE"
 
 [hostname]
-ssh_only = false
+ssh_only = true
 format = "at [$hostname]($style) "
 style = "bold pink" # Catppuccin pink color
 [hostname.aliases]
