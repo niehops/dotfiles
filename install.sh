@@ -5,7 +5,7 @@ set -euo pipefail
 DOTFILES_REPO="https://github.com/niehops/dotfiles.git"
 DOTFILES_DIR="$HOME/.dotfiles"
 TPM_PATH="$HOME/.tmux/plugins/tpm"
-PACKAGES=(neovim zsh zoxide fzf tmux stow git)
+PACKAGES=(neovim zsh zoxide fzf tmux stow git yazi)
 SUDO_CMD=""
 
 # === Colors ===

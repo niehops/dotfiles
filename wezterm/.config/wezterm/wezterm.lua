@@ -12,6 +12,7 @@ local config = {}
 if wezterm.config_builder then
   config = wezterm.config_builder()
 end
+-- config.default_prog = { "/opt/homebrew/bin/tmux", "new-session", "-A", "-s", "main" }
 
 -- ====================================================================
 -- SETTINGS
