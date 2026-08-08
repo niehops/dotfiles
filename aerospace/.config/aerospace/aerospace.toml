@@ -233,6 +233,6 @@ run = "layout floating"
 if.app-id = "com.apple.Photos"
 run = "layout floating"
 
-# [[on-window-detected]]
-# if.app-id = 'com.colliderli.iina'
-#   run = "layout floating"
+[[on-window-detected]]
+if.app-id = 'com.openai.codex'
+run = "move-node-to-workspace A"

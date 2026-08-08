@@ -91,6 +91,7 @@ alias k=kubectl
 alias python=python3
 alias myip6='curl -6 ip.sb'
 alias myip='curl -4 ip.sb'
+alias doc='docker'
 
 # git
 alias g=git
@@ -126,3 +127,8 @@ function y() {
 	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
+# Added by Antigravity IDE
+export PATH="/Users/nieh/.antigravity-ide/antigravity-ide/bin:$PATH"
+export PATH="/opt/homebrew/share/flutter/bin:$PATH"
+export PATH="$HOME/.platformio/penv/bin:$PATH"

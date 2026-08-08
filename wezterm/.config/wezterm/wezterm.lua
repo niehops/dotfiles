@@ -10,7 +10,7 @@ local config = {}
 -- ====================================================================
 
 if wezterm.config_builder then
-  config = wezterm.config_builder()
+	config = wezterm.config_builder()
 end
 -- config.default_prog = { "/opt/homebrew/bin/tmux", "new-session", "-A", "-s", "main" }
 
@@ -26,31 +26,31 @@ config.enable_tab_bar = false
 
 -- background blur --
 local function get_appearance()
-  if wezterm.gui then
-    return wezterm.gui.get_appearance()
-  end
-  return "Dark"
+	if wezterm.gui then
+		return wezterm.gui.get_appearance()
+	end
+	return "Dark"
 end
 
 local is_dark = get_appearance():find("Dark")
 
 if is_dark then
-  config.window_background_opacity = 0.5
-  config.macos_window_background_blur = 40
+	config.window_background_opacity = 0.7
+	config.macos_window_background_blur = 70
 else
-  config.window_background_opacity = 0.6
-  config.macos_window_background_blur = 50
+	config.window_background_opacity = 0.7
+	config.macos_window_background_blur = 70
 end
 
 -- ====================================================================
 -- KEYMAPS
 -- ====================================================================
 config.keys = {
-  {
-    key = "w",
-    mods = "CMD",
-    action = wezterm.action.CloseCurrentTab({ confirm = true }),
-  },
+	{
+		key = "w",
+		mods = "CMD",
+		action = wezterm.action.CloseCurrentTab({ confirm = true }),
+	},
 }
 
 -- return --
