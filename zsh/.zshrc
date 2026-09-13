@@ -92,6 +92,7 @@ alias python=python3
 alias myip6='curl -6 ip.sb'
 alias myip='curl -4 ip.sb'
 alias doc='docker'
+alias pm='podman'
 
 # git
 alias g=git
@@ -132,3 +133,59 @@ function y() {
 export PATH="/Users/nieh/.antigravity-ide/antigravity-ide/bin:$PATH"
 export PATH="/opt/homebrew/share/flutter/bin:$PATH"
 export PATH="$HOME/.platformio/penv/bin:$PATH"
+
+# podman custom cmd
+# Shell into a running container
+pe() {
+  local cid
+  cid=$(podman ps --format "{{.ID}}\t{{.Names}}\t{{.Image}}" | fzf --header="Select container to exec" | awk '{print $1}')
+  [ -n "$cid" ] && podman exec -it "$cid" "${1:-/bin/sh}"
+}
+
+# Stream logs from any container (running or stopped)
+pl() {
+  local cid
+  cid=$(podman ps -a --format "{{.ID}}\t{{.Names}}\t{{.Status}}" | fzf --header="Select container for logs" | awk '{print $1}')
+  [ -n "$cid" ] && podman logs -f "$cid"
+}
+
+# Stop running containers (multi-select enabled with Tab)
+pstop() {
+  local cids
+  cids=$(podman ps --format "{{.ID}}\t{{.Names}}\t{{.Image}}" | fzf -m --header="Tab to multi-select containers to stop" | awk '{print $1}')
+  [ -n "$cids" ] && echo "$cids" | xargs podman stop
+}
+
+# Remove images (multi-select enabled with Tab)
+prmi() {
+  local imgs
+  imgs=$(podman images --format "{{.Repository}}:{{.Tag}}\t{{.ID}}" | fzf -m --header="Tab to multi-select images to delete" | awk '{print $2}')
+  [ -n "$imgs" ] && echo "$imgs" | xargs podman rmi
+}
+
+
+# NVM - lazy load
+export NVM_DIR="$HOME/.nvm"
+
+# Use the default Node version without loading NVM
+NVM_DEFAULT_VERSION="$(readlink "$NVM_DIR/alias/default" 2>/dev/null)"
+if [[ -n "$NVM_DEFAULT_VERSION" && -d "$NVM_DIR/versions/node/$NVM_DEFAULT_VERSION/bin" ]]; then
+    export PATH="$NVM_DIR/versions/node/$NVM_DEFAULT_VERSION/bin:$PATH"
+fi
+
+# Load NVM only when the nvm command is actually used
+nvm() {
+    unset -f nvm
+    [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
+    nvm "$@"
+}
+
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+

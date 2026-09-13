@@ -236,3 +236,8 @@ run = "layout floating"
 [[on-window-detected]]
 if.app-id = 'com.openai.codex'
 run = "move-node-to-workspace A"
+
+[[on-window-detected]]
+if.app-id = 'com.google.GeminiMacOS'
+run = "move-node-to-workspace A"
+

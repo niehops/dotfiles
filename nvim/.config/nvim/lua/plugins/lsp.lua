@@ -4,7 +4,10 @@ vim.pack.add({
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" },
 	{ src = "https://github.com/b0o/SchemaStore.nvim" },
+	{ src = "https://github.com/nanotee/sqls.nvim", type = "start" },
 })
+
+vim.cmd.packadd("sqls.nvim")
 
 require("mason").setup({
 	ui = {
@@ -41,6 +44,10 @@ require("mason-tool-installer").setup({
 	auto_update = false,
 	run_on_start = true,
 })
+
+-- Modern Neovim 0.11+ LSP setup
+vim.lsp.config("sqls", {})
+vim.lsp.enable("sqls")
 
 -- LspAttach keymaps
 vim.api.nvim_create_autocmd(

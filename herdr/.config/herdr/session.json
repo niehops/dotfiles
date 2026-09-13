@@ -2,47 +2,31 @@
   "version": 3,
   "workspaces": [
     {
-      "id": "w5",
+      "id": "wA",
       "custom_name": null,
-      "identity_cwd": "/Users/nieh/.config/herdr",
+      "identity_cwd": "/Users/nieh",
       "public_pane_numbers": {
-        "8": 2,
-        "7": 1
+        "5": 1
       },
-      "next_public_pane_number": 3,
+      "next_public_pane_number": 2,
       "public_tab_numbers": [
-        1,
-        2
+        1
       ],
-      "next_public_tab_number": 3,
+      "next_public_tab_number": 2,
       "tabs": [
         {
           "custom_name": null,
           "layout": {
-            "Pane": 7
+            "Pane": 5
           },
           "panes": {
-            "7": {
-              "cwd": "/Users/nieh/.config/herdr"
+            "5": {
+              "cwd": "/Users/nieh"
             }
           },
           "zoomed": false,
-          "focused": 7,
-          "root_pane": 7
-        },
-        {
-          "custom_name": null,
-          "layout": {
-            "Pane": 8
-          },
-          "panes": {
-            "8": {
-              "cwd": "/Users/nieh/.dotfiles"
-            }
-          },
-          "zoomed": false,
-          "focused": 8,
-          "root_pane": 8
+          "focused": 5,
+          "root_pane": 5
         }
       ],
       "active_tab": 0
@@ -50,7 +34,7 @@
   ],
   "active": 0,
   "selected": 0,
-  "sidebar_width": 26,
-  "sidebar_section_split": 0.5070422,
+  "sidebar_width": null,
+  "sidebar_section_split": null,
   "collapsed_space_keys": []
 }

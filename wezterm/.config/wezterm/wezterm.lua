@@ -19,7 +19,27 @@ end
 -- ====================================================================
 -- appearance --
 config.color_scheme = "Catppuccin Mocha" -- Example setting
-config.font = wezterm.font("JetBrainsMono Nerd Font")
+--config.font = wezterm.font("JetBrainsMono Nerd Font")
+--config.font = wezterm.font("Noto Sans Myanmar")
+config.cell_width = 1.0
+config.font_shaper = "Harfbuzz"
+config.front_end = "Software"
+config.font = wezterm.font_with_fallback({
+	"JetBrainsMono Nerd Font",
+	"Noto Sans Myanmar",
+})
+-- config.font = wezterm.font_with_fallback({
+-- 	"JetBrains Mono",
+-- 	{ family = "Padauk", weight = "Regular" },
+-- 	{ family = "Noto Sans Myanmar", weight = "Regular" },
+-- })
+
+--config.harfbuzz_features = { "calt=1", "clig=1", "liga=1", "dlig=1" }
+
+-- Non-monospace glyph များကို auto-scale လုပ်ပြီး grid မပျက်စေရန်
+--config.allow_square_glyphs_to_overflow_width = "Always"
+
+--config.unicode_version = 14
 config.font_size = 19
 config.window_decorations = "RESIZE"
 config.enable_tab_bar = false
