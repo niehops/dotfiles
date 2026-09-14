@@ -1,10 +1,14 @@
 command = /bin/zsh
-
 theme = Catppuccin Mocha
-
 font-family = "JetBrainsMono Nerd Font"
+font-family = "Myanmar Sangam MN"
+font-feature = true
 font-size = 19
-
-font-codepoint-map = U+1000-U+109F=Noto Sans Myanmar
-
+font-codepoint-map = U+1000-U+109F="Myanmar Sangam MN"
 grapheme-width-method = unicode
+mouse-hide-while-typing = true
+window-decoration = true
+macos-option-as-alt = true
+background-opacity = 0.7
+background-blur-radius = 50
+window-decoration = false
